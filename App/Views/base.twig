@@ -407,6 +407,19 @@
                     <a href="{{ app_url }}/categories" class="nav-link">Categories</a>
                     <a href="{{ app_url }}/about" class="nav-link">About</a>
                     <a href="{{ app_url }}/contact" class="nav-link">Contact</a>
+
+       {% if session.role == 'admin' %}
+<a href="{{ app_url }}/admin"
+   class="inline-flex items-center gap-2 nav-cta px-3 py-2 rounded-lg">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 4l8 4-8 4-8-4 8-4zm0 10l8 4-8 4-8-4 8-4z" />
+    </svg>
+    <span class="text-xs font-semibold tracking-wide">Admin</span>
+</a>
+{% endif %}
+
+
                 </div>
 
                 <!-- Right -->
@@ -509,6 +522,14 @@
                     {% if not session.user_id %}
                         <a href="{{ app_url }}/login" class="block text-[var(--brand-text)]">Login</a>
                     {% endif %}
+            {% if session.role == 'admin' %}
+<a href="{{ app_url }}/admin"
+   class="block bg-[var(--brand-navbar)] text-white px-3 py-2 rounded-lg text-sm font-semibold">
+    Admin Panel
+</a>
+{% endif %}
+
+
                 </div>
             </div>
         </nav>
