@@ -25,7 +25,7 @@ class AuthController extends BaseController
         }
 
         $this->view('auth/login.twig', [
-            'title' => 'Login - BlackRoar',
+            'title' => 'Login - Backroar',
             'errors' => $_SESSION['errors'] ?? [],
             'old' => $_SESSION['old'] ?? []
         ]);
@@ -98,7 +98,7 @@ class AuthController extends BaseController
         }
 
         $this->view('auth/register.twig', [
-            'title' => 'Register - BlackRoar',
+            'title' => 'Register - Backroar',
             'errors' => $_SESSION['errors'] ?? [],
             'old' => $_SESSION['old'] ?? []
         ]);
@@ -161,7 +161,7 @@ class AuthController extends BaseController
             $_SESSION['user_email'] = $email;
             $_SESSION['role'] = 'customer';
 
-            \flash('success', 'Registration successful! Welcome to BlackRoar.');
+            \flash('success', 'Registration successful! Welcome to Backroar.');
             return $this->redirect('/account');
         }
 
@@ -193,7 +193,7 @@ class AuthController extends BaseController
     public function showForgotPassword()
     {
         $this->view('auth/forgot-password.twig', [
-            'title' => 'Forgot Password - BlackRoar'
+            'title' => 'Forgot Password - Backroar'
         ]);
     }
 

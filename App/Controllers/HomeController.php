@@ -22,7 +22,7 @@ class HomeController extends BaseController
         $featuredProducts = $this->productModel->getFeatured(8);
 
         $data = [
-            'title' => 'BlackRoar - Mobile Cases & Accessories',
+            'title' => 'Backroar - Mobile Cases & Accessories',
             'categories' => $categories,
             'featured_products' => $featuredProducts
         ];

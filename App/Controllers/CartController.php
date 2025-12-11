@@ -32,7 +32,7 @@ class CartController extends BaseController
         $totals = $this->cartModel->getCartTotals($userId);
 
         $this->view('cart/index.twig', [
-            'title' => 'Shopping Cart - BlackRoar',
+            'title' => 'Shopping Cart - Backroar',
             'cart_items' => $cartItems,
             'totals' => $totals
         ]);

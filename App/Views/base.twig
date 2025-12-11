@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}BackRoar — Mobile Cases & Accessories{% endblock %}</title>
     <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="description" content="BackRoar - India's premium mobile case & accessories brand. Buy designer, shockproof, custom cases for all phones.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
@@ -614,7 +616,7 @@
     <!-- ========== MARVEL INTRO SCRIPT ========== -->
     <script>
         // Check if intro has been shown in this session
-        const hasSeenIntro = sessionStorage.getItem('blackroar_intro_shown');
+        const hasSeenIntro = sessionStorage.getItem('Backroar_intro_shown');
         
         if (hasSeenIntro) {
             // Skip intro if already shown
@@ -623,7 +625,7 @@
             document.getElementById('main-content').style.animation = 'none';
         } else {
             // Show intro and mark as shown
-            sessionStorage.setItem('blackroar_intro_shown', 'true');
+            sessionStorage.setItem('Backroar_intro_shown', 'true');
             
             // Generate particles
             const particlesContainer = document.getElementById('particles');

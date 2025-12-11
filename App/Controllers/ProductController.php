@@ -36,7 +36,7 @@ class ProductController extends BaseController
         $categories = $this->categoryModel->getActive();
 
         $this->view('product/list.twig', [
-            'title' => 'All Products - BlackRoar',
+            'title' => 'All Products - Backroar',
             'products' => $result['products'],
             'categories' => $categories,
             'pagination' => [
@@ -80,7 +80,7 @@ class ProductController extends BaseController
         $ratingStats = $this->reviewModel->getAverageRating($product['id']);
 
         $this->view('product/detail.twig', [
-            'title' => $product['name'] . ' - BlackRoar',
+            'title' => $product['name'] . ' - Backroar',
             'product' => $product,
             'images' => $images,
             'related_products' => $relatedProducts,
@@ -105,7 +105,7 @@ class ProductController extends BaseController
         $result = $this->productModel->search($keyword, $page, 24);
 
         $this->view('product/search.twig', [
-            'title' => 'Search Results for "' . $keyword . '" - BlackRoar',
+            'title' => 'Search Results for "' . $keyword . '" - Backroar',
             'keyword' => $keyword,
             'products' => $result['products'],
             'pagination' => [

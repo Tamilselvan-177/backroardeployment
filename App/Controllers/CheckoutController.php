@@ -55,7 +55,7 @@ class CheckoutController extends BaseController
         $totals         = $this->cartModel->getCartTotals($userId);
 
         $this->view('checkout/index.twig', [
-            'title'           => 'Checkout - BlackRoar',
+            'title'           => 'Checkout - Backroar',
             'cart_items'      => $cartItems,
             'addresses'       => $addresses,
             'default_address' => $defaultAddress,

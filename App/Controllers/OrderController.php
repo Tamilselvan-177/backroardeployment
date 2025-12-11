@@ -27,7 +27,7 @@ class OrderController extends BaseController
         $result = $this->orderModel->getUserOrders(\userId(), $page, 10);
 
         $this->view('order/history.twig', [
-            'title' => 'Order History - BlackRoar',
+            'title' => 'Order History - Backroar',
             'orders' => $result['orders'],
             'pagination' => [
                 'total' => $result['total'],
@@ -59,7 +59,7 @@ class OrderController extends BaseController
         $orderItems = $this->orderModel->getOrderItems($order['id']);
 
         $this->view('order/detail.twig', [
-            'title' => 'Order #' . $orderNumber . ' - BlackRoar',
+            'title' => 'Order #' . $orderNumber . ' - Backroar',
             'order' => $order,
             'order_items' => $orderItems
         ]);

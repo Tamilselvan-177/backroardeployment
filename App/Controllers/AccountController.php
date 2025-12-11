@@ -43,7 +43,7 @@ class AccountController extends BaseController
         $wishlistCount = is_array($wishlistItems) ? count($wishlistItems) : 0;
 
         $this->view('account/dashboard.twig', [
-            'title'          => 'My Account - BlackRoar',
+            'title'          => 'My Account - Backroar',
             'user'           => $user,
             'total_orders'   => $totalOrders,
             'wishlist_count' => $wishlistCount,
@@ -58,7 +58,7 @@ class AccountController extends BaseController
         $user = $this->userModel->getUserById(\userId());
 
         $this->view('account/profile.twig', [
-            'title'  => 'My Profile - BlackRoar',
+            'title'  => 'My Profile - Backroar',
             'user'   => $user,
             'errors' => $_SESSION['errors'] ?? [],
             'old'    => $_SESSION['old'] ?? [],
@@ -112,7 +112,7 @@ class AccountController extends BaseController
         $result     = $orderModel->getUserOrders(\userId(), $page, 10);
 
         $this->view('account/orders.twig', [
-            'title'  => 'My Orders - BlackRoar',
+            'title'  => 'My Orders - Backroar',
             'orders' => $result['orders'],
             'pagination' => [
                 'total'        => $result['total'],

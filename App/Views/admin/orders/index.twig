@@ -66,6 +66,50 @@
             {{ session.flash.error }}
         </div>
         {% endif %}
+        <!-- Filters -->
+<form method="get" class="mb-6 bg-white p-4 rounded-lg border border-gray-300 grid grid-cols-1 md:grid-cols-5 gap-4">
+
+    <!-- Order Status -->
+    <select name="status" class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+        <option value="">All Status</option>
+        {% for s in ['Pending','Confirmed','Processing','Shipped','Delivered','Cancelled'] %}
+            <option value="{{ s }}" {% if s == app.request.get('status') %}selected{% endif %}>{{ s }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- Payment Status -->
+    <select name="payment" class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+        <option value="">All Payment</option>
+        {% for p in ['Paid','Failed','Pending'] %}
+            <option value="{{ p }}" {% if p == app.request.get('payment') %}selected{% endif %}>{{ p }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- From Date -->
+    <input type="date" name="from" value="{{ app.request.get('from') }}" 
+           class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+
+    <!-- To Date -->
+    <input type="date" name="to" value="{{ app.request.get('to') }}" 
+           class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+
+    <!-- Search -->
+<input type="text" name="search" value="{{ app.request.get('search') }}"
+       placeholder="Order number / User ID / Email"
+       class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+
+    <div class="md:col-span-5 flex gap-2">
+        <button class="px-4 py-2 bg-[var(--brand-navbar)] text-white rounded-lg text-sm hover:bg-black">
+            Apply Filters
+        </button>
+
+        <a href="{{ app_url }}/admin/orders"
+           class="px-4 py-2 bg-gray-300 rounded-lg text-sm hover:bg-gray-400">
+           Reset
+        </a>
+    </div>
+</form>
+
 
         <!-- Table -->
         <div class="admin-card overflow-x-auto">
@@ -75,6 +119,8 @@
                         <th class="p-3">#</th>
                         <th class="p-3">Order Number</th>
                         <th class="p-3">User</th>
+                        <th class="p-3">Email</th>
+
                         <th class="p-3">Total</th>
                         <th class="p-3">Payment</th>
                         <th class="p-3">Status</th>
@@ -105,6 +151,10 @@
                         <td class="p-3 align-top text-xs text-gray-700">
                             {{ o.user_id }}
                         </td>
+                        <td class="p-3 align-top text-xs text-gray-700">
+    {{ o.user_email ?? '—' }}
+</td>
+
                         <td class="p-3 align-top text-xs">
                             ₹{{ o.total_amount }}
                         </td>

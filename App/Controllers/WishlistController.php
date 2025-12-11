@@ -25,7 +25,7 @@ class WishlistController extends BaseController
 
         $items = $this->wishlist->getUserWishlist(\userId());
         $this->view('wishlist/index.twig', [
-            'title' => 'My Wishlist - BlackRoar',
+            'title' => 'My Wishlist - Backroar',
             'items' => $items
         ]);
     }

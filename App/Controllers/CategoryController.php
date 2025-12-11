@@ -33,7 +33,7 @@ class CategoryController extends BaseController
         $categories = $this->categoryModel->getWithProductCount();
 
         $this->view('category/list.twig', [
-            'title' => 'Shop by Categories - BlackRoar',
+            'title' => 'Shop by Categories - Backroar',
             'categories' => $categories
         ]);
     }
@@ -77,7 +77,7 @@ class CategoryController extends BaseController
         }
 
         $this->view('category/view.twig', [
-            'title' => $category['name'] . ' - BlackRoar',
+            'title' => $category['name'] . ' - Backroar',
             'category' => $category,
             'subcategories' => $subcategories,
             'brands' => $brands,
